@@ -12,13 +12,17 @@ class ConvertionProtocol:
 
     def roman_to_int(self, to_convert):
         try:
-            for n in range(len(to_convert)):
-                if to_convert[n] in self.roman_dictionary:
-                    pass
+            result = 0
+            for i in range(len(to_convert)):
+                if to_convert[i] in self.roman_dictionary:
+                    if i > 0 and self.roman_dictionary[to_convert[i]] > self.roman_dictionary[to_convert[i - 1]]:
+                        result += self.roman_dictionary[to_convert[i - 1]] * (self.roman_dictionary[to_convert[i]] - 2)
+                    else:
+                        result += self.roman_dictionary[to_convert[i]]
                 else:
-                    return 'STATUS: 103 BAD INPUT\nMESSAGE: YOU HAVE ENTERED A NON ROMAN NUMBER'
+                    return '\nSTATUS: 103 BAD INPUT\nMESSAGE: YOU HAVE ENTERED A NON ROMAN NUMBER'
 
-            return 'STATUS: 100 OK\nOBJECT TO BE CONVERTED: {}\nCONVERSION RESULT: {}'.format(to_convert, 10)
+            return '\nSTATUS: 100 OK\nOBJECT TO BE CONVERTED: {}\nCONVERSION RESULT: {}\n'.format(to_convert, result)
         except Exception as e:
             print(e)
             return 'STATUS: 101 INTERNAL ERROR\nMESSAGE: ERROR IN THE CONVERSION'
