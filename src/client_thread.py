@@ -18,11 +18,17 @@ class ClientThread(threading.Thread):
                 client_request = client_request.decode('utf-8')
 
                 command, to_convert = client_request.split('-')
+                
+                print(self.client_address, 'send: [COMMAND = ' + command + '| OBJECT = ' + to_convert + ']')
+                
                 if (command != 'out'):
                     server_response = protocol.treat(command, to_convert)
                     self.client_socket.sendall(bytes(server_response, 'UTF-8'))
                 else:
                     is_connected = False
                     print(Fore.YELLOW + '', self.client_address, '' + Fore.RESET, 'has been disconnected')
-            except:
-                print(Fore.RED + 'Error in the connection' + Fore.RESET)
+            except Exception as e:
+                print(e)
+                error_message = Fore.RED + 'Error in the connection' + Fore.RESET
+                print(error_message)
+                self.client_socket.sendall(bytes(error_message, 'UTF-8'))
