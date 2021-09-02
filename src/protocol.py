@@ -9,7 +9,7 @@ class ConvertionProtocol:
             'D': 500,
             'M': 1000
         }
-
+    
     def roman_to_int(self, to_convert):
         try:
             result = 0
@@ -20,18 +20,18 @@ class ConvertionProtocol:
                     else:
                         result += self.roman_dictionary[to_convert[i]]
                 else:
-                    return '\nSTATUS: 103 BAD INPUT\nMESSAGE: YOU HAVE ENTERED A NON ROMAN NUMBER'
+                    return '\nSTATUS: 102\nMESSAGE: YOU HAVE ENTERED A NON ROMAN NUMBER\n'
 
-            return '\nSTATUS: 100 OK\nOBJECT TO BE CONVERTED: {}\nCONVERSION RESULT: {}\n'.format(to_convert, result)
+            return '\nSTATUS: 100\nOBJECT TO BE CONVERTED: {}\nCONVERSION RESULT: {}\n'.format(to_convert, result)
         except Exception as e:
             print(e)
-            return 'STATUS: 101 INTERNAL ERROR\nMESSAGE: ERROR IN THE CONVERSION'
+            return 'STATUS: 101\nMESSAGE: INTERNAL ERROR\n'
 
     def int_to_roman(self):
         return 'you want to convert a integer to an roman'
 
     def treat(self, command, to_convert):
-        if(command == 'roman'):
+        if(command == 'ROMAN'):
             return self.roman_to_int(to_convert)
-        elif(command == 'int'):
+        elif(command == 'INT'):
             return self.int_to_roman()
