@@ -1,7 +1,7 @@
 import socket
 from colorama import Fore
 
-address = ('127.0.0.1', 3333)
+address = ('127.0.0.1', 1919)
 
 client_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 client_socket.connect(address)
@@ -27,11 +27,17 @@ while is_connected:
             print('You has been disconnected!')
             is_connected = False
         else:
+            value = None
             if(command == 'ROMAN'):
                 roman_string = input('Enter the roman number that you want to convert: ')
-                payload_to_server = command + '|' + roman_string.upper()
-                client_socket.send(bytes(payload_to_server, 'UTF-8'))
-                
+                value = roman_string.upper()
+            elif(command == 'INT'):
+                integer_to_be_converted = input('Enter the integer number that you want to convert: ')
+                value = integer_to_be_converted
+
+            payload_to_server = command + '|' + value
+            client_socket.send(bytes(payload_to_server, 'UTF-8'))
+
             server_response = client_socket.recv(2048)
             message = server_response.decode('utf-8')
             print(message)

@@ -3,7 +3,7 @@ from colorama import Fore
 from client_thread import ClientThread
 
 
-address = ('127.0.0.1', 3333)
+address = ('127.0.0.1', 1919)
 
 server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 server_socket.bind(address)
