@@ -16,11 +16,11 @@ Primeiro, clone o repositório do projeto:
 
 Depois, vá até a pasta de destino do repositório e acesse a pasta **_src/_**
 
-Na pasta **_src_**, primeiro você **deve** executar o servidor com o seguinte comando:
+Na pasta **_src_**, primeiro você **deve** executar o servidor com o seguinte comando no terminal:
 
 `python3 server.py` ou `python server.py`
 
-Após isso, execute o(s) cliente(s) com o comando:
+Após isso, execute o(s) cliente(s) com o comando no terminal:
 
 `python3 client.py` ou `python client.py`
 
@@ -31,10 +31,10 @@ Primeiro, faça o download do ZIP do projeto. Após isso, extraia a pasta do pro
 
 Com a pasta do projeto extraída, vá até ela e acesse a pasta **_src/_**.
 
-Na pasta **_src_**, primeiro você **deve** executar o servidor com o seguinte comando:
+Na pasta **_src_**, primeiro você **deve** executar o servidor com o seguinte comando no terminal:
 
 `python3 server.py` ou `python server.py`
 
-Após isso, execute o(s) cliente(s) com o comando:
+Após isso, execute o(s) cliente(s) com o comando no terminal:
 
 `python3 client.py` ou `python client.py`
