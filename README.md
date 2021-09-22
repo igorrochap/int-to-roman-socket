@@ -20,7 +20,7 @@ Na pasta **_src_**, primeiro você **deve** executar o servidor com o seguinte c
 
 `python3 server.py` ou `python server.py`
 
-Após isso, execute o(s) cliente(s) com o comando no terminal:
+Após isso, abra um ou mais novo(s) terminal(s) e execute o(s) cliente(s) com o comando:
 
 `python3 client.py` ou `python client.py`
 
@@ -35,6 +35,6 @@ Na pasta **_src_**, primeiro você **deve** executar o servidor com o seguinte c
 
 `python3 server.py` ou `python server.py`
 
-Após isso, execute o(s) cliente(s) com o comando no terminal:
+Após isso, abra um ou mais novo(s) terminal(s) e execute o(s) cliente(s) com o comando:
 
 `python3 client.py` ou `python client.py`
