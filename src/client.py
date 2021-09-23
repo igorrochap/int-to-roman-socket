@@ -11,7 +11,7 @@ allowed_commands = ['OUT', 'ROMAN', 'INT']
 is_connected = True
 while is_connected:
     print(Fore.YELLOW + 'If you want to disconnect, type "out"' + Fore.RESET)
-    command = input('Inform the type of the input ("roman" or "int"): ').upper()
+    command = input('Inform the type of the input ("roman" or "int"): ').replace(' ', '').upper()
     
     is_command_valid = command in allowed_commands
     
